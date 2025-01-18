@@ -1,0 +1,12 @@
+<%- include("header") %>
+<body>
+    <%- include("profileNav") %>
+    <form class="new_entry" action="/new/<%= user._id %>" method = "POST">
+        <label for="date">Today's date</label>
+        <input type="date" name="date" id="date">
+        <label for="entry">New Entry</label>
+        <textarea name="entry" id="entry" cols="30" rows="10"></textarea>
+        <button type="submit">Add Entry</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%- include('header') %>
+<body>
+    <%- include('profileNav') %>
+    <h1>Edit your meditation entry</h1>
+    <form class="edit-entry" action="/edit/<%= user._id %>/<%= entryIndex %>?_method=PATCH" method="POST">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" value="<%= entry.date %>">
+        <label for="entry">Edit Entry:</label>
+        <textarea name="entry" id="entry" cols="30" rows="10"><%= entry.entry %></textarea>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

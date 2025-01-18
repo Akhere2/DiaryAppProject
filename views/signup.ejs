@@ -1,0 +1,16 @@
+<%- include('header') %> <!-- This line includes the header.ejs file -->
+<body>
+    <%- include('navigation') %> <!-- This line includes the navigation.ejs file -->
+    <h1>Signup</h1>
+    <div class = "signup-container">
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <form class="signup" action="/signup" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Signup</button>
+        </form>
+</div>

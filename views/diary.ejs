@@ -1,0 +1,21 @@
+<%- include('header') %>
+<body>
+    <%- include("profileNav") %>
+    <h1>Welcome To Your Meditation Diary</h1>
+    <p>Here you can keep track of your meditation practice. Click the Add New button to add an entry to your diary.</p>
+    <a id="new" href="/new/<%= user._id %>">Add New</a>
+    <div class="log-entries">
+        <% log.forEach(function(entry, index) { %>
+            <div class="log-entry">
+                <h2>Entry <%= index + 1 %></h2>
+                <h3><%= entry.date %></h3>
+                <p><%= entry.entry %></p>
+                <a href="/edit/<%= user._id %>/<%= index %>" class="edit-button">Edit</a>
+                <form action="/delete/<%= user._id %>/<%= index %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
